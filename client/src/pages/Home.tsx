@@ -12,7 +12,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
           <div className="inline-block mb-4 px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
             🇨🇳 Tecnologia Comprovada em {TECH_SPECS.chinaInstallations} Instalações na China
           </div>
@@ -25,7 +27,7 @@ export default function Home() {
           </p>
           
           {/* Key Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-green-100">
               <div className="text-3xl font-bold text-green-700">{TECH_SPECS.processingTime}</div>
               <div className="text-sm text-gray-600 mt-1">Tempo de Processamento</div>
@@ -37,6 +39,15 @@ export default function Home() {
             <div className="bg-white p-6 rounded-lg shadow-sm border border-green-100">
               <div className="text-3xl font-bold text-green-700">{MARKET_DATA.treatmentGap}</div>
               <div className="text-sm text-gray-600 mt-1">Resíduos Sem Tratamento</div>
+            </div>
+          </div>
+            </div>
+            <div className="hidden md:block">
+              <img 
+                src="/images/hero/waste-to-green.webp" 
+                alt="From Food Waste to Green - Golden Deer Technology" 
+                className="rounded-2xl shadow-2xl w-full"
+              />
             </div>
           </div>
         </div>

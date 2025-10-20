@@ -335,7 +335,14 @@ export default function B2GPortal() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* ABC Paulista Consortium */}
-            <Card className="border-2 border-green-200">
+            <Card className="border-2 border-green-200 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="/images/cases/municipal-project.webp" 
+                  alt="Consórcio Municipal - Instalação de Processamento" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader>
                 <div className="inline-block mb-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">
                   Estudo de Caso Ilustrativo
@@ -387,7 +394,14 @@ export default function B2GPortal() {
             </Card>
 
             {/* BSB Airport Pilot */}
-            <Card className="border-2 border-blue-200">
+            <Card className="border-2 border-blue-200 overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="/images/cases/sinopec-equipment.webp" 
+                  alt="Aeroporto - Equipamento de Processamento" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader>
                 <div className="inline-block mb-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">
                   Estudo de Caso Ilustrativo

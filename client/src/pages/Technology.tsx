@@ -254,6 +254,24 @@ export default function Technology() {
             </p>
           </div>
 
+          {/* Equipment Images */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/equipment/small-models.webp" 
+                alt="Modelos Compactos JL-01, JL-02, JL-05" 
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/equipment/large-models.webp" 
+                alt="Modelos Industriais JL-01 a JL-20" 
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
@@ -261,7 +279,6 @@ export default function Technology() {
                   <th className="border border-green-200 p-3 text-left">Modelo</th>
                   <th className="border border-green-200 p-3 text-left">Capacidade</th>
                   <th className="border border-green-200 p-3 text-left">Aplicação</th>
-                  <th className="border border-green-200 p-3 text-left">Investimento</th>
                 </tr>
               </thead>
               <tbody>
@@ -269,43 +286,36 @@ export default function Technology() {
                   <td className="border border-gray-200 p-3 font-semibold">JL-50</td>
                   <td className="border border-gray-200 p-3">50 kg/dia</td>
                   <td className="border border-gray-200 p-3">Restaurantes pequenos</td>
-                  <td className="border border-gray-200 p-3">R$ 89.000</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="border border-gray-200 p-3 font-semibold">JL-100</td>
                   <td className="border border-gray-200 p-3">100 kg/dia</td>
                   <td className="border border-gray-200 p-3">Cafeterias, escritórios</td>
-                  <td className="border border-gray-200 p-3">R$ 178.000</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 p-3 font-semibold">JL-500</td>
                   <td className="border border-gray-200 p-3">500 kg/dia</td>
                   <td className="border border-gray-200 p-3">Hotéis grandes</td>
-                  <td className="border border-gray-200 p-3">R$ 890.000</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="border border-gray-200 p-3 font-semibold">JL-1000</td>
                   <td className="border border-gray-200 p-3">1 ton/dia</td>
                   <td className="border border-gray-200 p-3">Hospitais, shoppings</td>
-                  <td className="border border-gray-200 p-3">R$ 1.780.000</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 p-3 font-semibold">JL-2000</td>
                   <td className="border border-gray-200 p-3">2 tons/dia</td>
                   <td className="border border-gray-200 p-3">Aeroportos</td>
-                  <td className="border border-gray-200 p-3">R$ 3.560.000</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="border border-gray-200 p-3 font-semibold">JL-10</td>
                   <td className="border border-gray-200 p-3">10 tons/dia</td>
                   <td className="border border-gray-200 p-3">Municípios pequenos</td>
-                  <td className="border border-gray-200 p-3">R$ 17.800.000</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 p-3 font-semibold">JL-100</td>
                   <td className="border border-gray-200 p-3">100 tons/dia</td>
                   <td className="border border-gray-200 p-3">Municípios grandes</td>
-                  <td className="border border-gray-200 p-3">R$ 178.000.000</td>
                 </tr>
               </tbody>
             </table>
