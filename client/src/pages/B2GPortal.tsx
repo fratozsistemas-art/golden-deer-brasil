@@ -323,6 +323,130 @@ export default function B2GPortal() {
         </div>
       </section>
 
+      {/* Case Studies (Illustrative) */}
+      <section className="py-16 px-4 bg-gradient-to-b from-white to-green-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Casos de Uso Ilustrativos</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Exemplos hipotéticos baseados em parâmetros reais de mercado para demonstração de viabilidade
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* ABC Paulista Consortium */}
+            <Card className="border-2 border-green-200">
+              <CardHeader>
+                <div className="inline-block mb-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">
+                  Estudo de Caso Ilustrativo
+                </div>
+                <CardTitle className="text-2xl">Consórcio ABC Paulista</CardTitle>
+                <CardDescription>Modelo de Consórcio Municipal (Hipotético)</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="text-sm text-gray-600">Capacidade</div>
+                    <div className="text-xl font-bold text-green-700">1.000 tons/dia</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600">Municípios</div>
+                    <div className="text-xl font-bold text-green-700">3 cidades</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600">Economia Anual</div>
+                    <div className="text-xl font-bold text-green-700">R$ 36M</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600">Prazo</div>
+                    <div className="text-xl font-bold text-green-700">25 anos</div>
+                  </div>
+                </div>
+                <div className="pt-4 border-t">
+                  <h4 className="font-semibold mb-2">Modelo de Negócio:</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      Consórcio compartilha custos de infraestrutura
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      Economia de escala reduz custo por tonelada
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      Receita com fertilizante orgânico compartilhada
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      Timeline: 18-24 meses para implementação
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* BSB Airport Pilot */}
+            <Card className="border-2 border-blue-200">
+              <CardHeader>
+                <div className="inline-block mb-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">
+                  Estudo de Caso Ilustrativo
+                </div>
+                <CardTitle className="text-2xl">Aeroporto BSB</CardTitle>
+                <CardDescription>Projeto Piloto Aeroportuário (Hipotético)</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="text-sm text-gray-600">Capacidade</div>
+                    <div className="text-xl font-bold text-blue-700">20 tons/dia</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600">Operação</div>
+                    <div className="text-xl font-bold text-blue-700">24/7</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600">Equipamento</div>
+                    <div className="text-xl font-bold text-blue-700">JL-50</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-600">Prazo Piloto</div>
+                    <div className="text-xl font-bold text-blue-700">12 meses</div>
+                  </div>
+                </div>
+                <div className="pt-4 border-t">
+                  <h4 className="font-semibold mb-2">Características:</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                      Conformidade ANVISA para resíduos aeroportuários
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                      Integração com sistemas existentes do aeroporto
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                      Processamento on-site reduz transporte
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                      Impacto mínimo nas operações do aeroporto
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500 italic">
+              * Casos ilustrativos baseados em parâmetros de mercado. Não representam projetos reais ou compromissos contratuais.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="container mx-auto max-w-6xl text-center">

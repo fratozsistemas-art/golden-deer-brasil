@@ -26,19 +26,35 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        organization: "",
-        portal: "general",
-        message: "",
+    try {
+      // Send to backend API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      if (response.ok) {
+        toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          organization: "",
+          portal: "general",
+          message: "",
+        });
+      } else {
+        toast.error("Erro ao enviar mensagem. Por favor, tente novamente.");
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Erro ao enviar mensagem. Por favor, tente novamente.");
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -340,6 +356,113 @@ export default function Contact() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h3>
+            <p className="text-lg text-gray-600">
+              Respostas para as dúvidas mais comuns sobre nossa tecnologia e serviços
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {/* Technology Questions */}
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Como funciona o processo de 16 horas?</h4>
+              <p className="text-gray-700">
+                Utilizamos fermentação aeróbica microbiana de 8ª geração que acelera a decomposição natural de resíduos orgânicos. 
+                O consórcio microbiano proprietário da Shanghai Jielu reduz o tempo de 3-6 meses (compostagem tradicional) para apenas 16 horas, 
+                com redução de volume de 80-90%.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Quais tipos de resíduos orgânicos podem ser processados?</h4>
+              <p className="text-gray-700">
+                Processamos resíduos de cozinha, sobras de alimentos, resíduos de restaurantes, resíduos de mercados, 
+                resíduos de produção agrícola e agroindustrial. Não processamos resíduos perigosos, químicos ou materiais não-orgânicos.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">O equipamento gera odor ou poluição?</h4>
+              <p className="text-gray-700">
+                Não. O sistema é completamente fechado com filtração de ar, garantindo operação sem odor. 
+                Não há emissão de poluentes, efluentes líquidos ou resíduos secundários. O processo é certificado ISO 14001.
+              </p>
+            </div>
+
+            {/* Financial Questions */}
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Quais são os modelos de negócio disponíveis?</h4>
+              <p className="text-gray-700">
+                Oferecemos <strong>Venda Direta</strong> (aquisição de equipamento), <strong>Leasing</strong> (em breve - aluguel operacional), 
+                e <strong>Service Agreement</strong> (serviço completo). Para governos, também oferecemos modelos PPP, BOT e Consórcio Municipal.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Qual é o retorno sobre investimento (ROI)?</h4>
+              <p className="text-gray-700">
+                O ROI varia de 7-12 anos dependendo do volume de resíduos, preço de aterro local e receita com fertilizante orgânico. 
+                Use nossa <strong>Calculadora ROI</strong> no Portal B2B para estimar seu caso específico, incluindo créditos de carbono.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Há financiamento disponível?</h4>
+              <p className="text-gray-700">
+                Sim. Para projetos governamentais (B2G), apoiamos acesso a BNDES, FINEP e IDB. 
+                Para empresas privadas (B2B), trabalhamos com bancos comerciais e linhas de crédito ESG com taxas preferenciais.
+              </p>
+            </div>
+
+            {/* Regulatory Questions */}
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">A tecnologia atende à PNRS (Lei 12.305/2010)?</h4>
+              <p className="text-gray-700">
+                Sim, completamente. Nossa solução atende a todos os requisitos da Política Nacional de Resíduos Sólidos, 
+                incluindo destinação adequada, redução de aterros e economia circular. Fornecemos documentação completa de conformidade.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Quais certificações a tecnologia possui?</h4>
+              <p className="text-gray-700">
+                A tecnologia Shanghai Jielu possui certificações ISO 14001 (Gestão Ambiental), conformidade EPA (EUA), 
+                e atende diretivas EU WEEE. No Brasil, estamos em processo de certificação INMETRO e ANVISA (para aeroportos).
+              </p>
+            </div>
+
+            {/* Implementation Questions */}
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Quanto tempo leva a implementação?</h4>
+              <p className="text-gray-700">
+                Para equipamentos menores (JL-05 a JL-50): <strong>2-3 meses</strong> (entrega + instalação + treinamento). 
+                Para projetos maiores (JL-100+): <strong>6-12 meses</strong>. Projetos governamentais PPP: <strong>18-24 meses</strong> (inclui licenciamento).
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-2">Qual suporte técnico é oferecido?</h4>
+              <p className="text-gray-700">
+                Oferecemos treinamento completo da equipe, manutenção preventiva programada, suporte técnico 24/7, 
+                peças de reposição com estoque local, e monitoramento remoto (IoT) para equipamentos JL-100+.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Não encontrou sua resposta?</p>
+            <Button size="lg" className="bg-green-700 hover:bg-green-800">
+              <Mail className="w-4 h-4 mr-2" />
+              Entre em Contato Conosco
+            </Button>
           </div>
         </div>
       </section>

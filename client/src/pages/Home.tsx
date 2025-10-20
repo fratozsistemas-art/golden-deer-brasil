@@ -42,6 +42,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section className="py-8 px-4 bg-green-900 text-white">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-green-300">{TECH_SPECS.chinaInstallations}</div>
+              <div className="text-sm text-green-100 mt-1">Instalações na China</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-green-300">{TECH_SPECS.processingTime}</div>
+              <div className="text-sm text-green-100 mt-1">Tempo de Processamento</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-green-300">{TECH_SPECS.volumeReduction}</div>
+              <div className="text-sm text-green-100 mt-1">Redução de Volume</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-green-300">Fortune 500</div>
+              <div className="text-sm text-green-100 mt-1">Clientes Principais</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portal Selection */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
