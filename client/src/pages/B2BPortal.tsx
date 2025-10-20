@@ -23,9 +23,13 @@ export default function B2BPortal() {
   const operatingCost = equipmentCost * 0.20;
   const fertilizerRevenue = annualWaste * 0.15 * 100;
   
-  const annualSavings = currentTotalCost - operatingCost + fertilizerRevenue;
+  // Carbon Credits Calculation
+  const co2Reduction = annualWaste * 0.5; // 0.5 tons CO2 per ton of waste
+  const carbonCreditPrice = 50; // R$ 50 per ton CO2 (conservative estimate)
+  const carbonCreditsRevenue = co2Reduction * carbonCreditPrice;
+  
+  const annualSavings = currentTotalCost - operatingCost + fertilizerRevenue + carbonCreditsRevenue;
   const paybackYears = equipmentCost / annualSavings;
-  const co2Reduction = annualWaste * 0.5;
 
   const segments = [
     {
@@ -34,7 +38,7 @@ export default function B2BPortal() {
       icon: Plane,
       dailyVolume: "20 tons/dia",
       equipment: "JL-50 a JL-100",
-      examples: ["BSB", "GRU", "Galeão"],
+      examples: ["Aeroportos Regionais", "Aeroportos Internacionais"],
       color: "blue",
     },
     {
@@ -43,7 +47,7 @@ export default function B2BPortal() {
       icon: Hotel,
       dailyVolume: "0.5-2 tons/dia",
       equipment: "JL-10 a JL-50",
-      examples: ["Marriott", "Hilton", "Accor"],
+      examples: ["Hotéis", "Resorts"],
       color: "purple",
     },
     {
@@ -61,16 +65,16 @@ export default function B2BPortal() {
       icon: Building,
       dailyVolume: "2-5 tons/dia",
       equipment: "JL-50 a JL-100",
-      examples: ["Escritórios", "Universidades"],
+      examples: ["Escritórios", "Universidades", "Shopping Malls"],
       color: "indigo",
     },
     {
       id: "agro",
-      title: "Agro/Agroindustrial",
+      title: "Agro/Industrial",
       icon: Wheat,
       dailyVolume: "10-100+ tons/dia",
       equipment: "JL-100 a JL-500+",
-      examples: ["JBS", "BRF", "Suzano"],
+      examples: ["Agroindústria", "Indústria Alimentar"],
       color: "green",
     },
   ];
@@ -207,6 +211,10 @@ export default function B2BPortal() {
                       <span className="font-semibold text-green-600">+R$ {fertilizerRevenue.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0})}</span>
                     </div>
                     <div className="flex justify-between">
+                      <span className="text-gray-600">Créditos de Carbono:</span>
+                      <span className="font-semibold text-green-600">+R$ {carbonCreditsRevenue.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0})}</span>
+                    </div>
+                    <div className="flex justify-between">
                       <span className="text-gray-600">Economia Anual:</span>
                       <span className="font-semibold text-green-600">R$ {annualSavings.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0})}</span>
                     </div>
@@ -321,8 +329,8 @@ export default function B2BPortal() {
 
             <Card className="border-2 border-blue-200">
               <CardHeader>
-                <div className="inline-block mb-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
-                  Mais Popular
+                <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">
+                  Em Breve
                 </div>
                 <CardTitle>Leasing</CardTitle>
                 <CardDescription>Aluguel Operacional</CardDescription>
